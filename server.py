@@ -2,7 +2,7 @@ import Pyro4
 
 @Pyro4.expose
 
-class calcul(object):
+class calculator(object):
 	def sum(self, x, y):
 		result = x+y
 		return result
@@ -21,7 +21,7 @@ class calcul(object):
 ############################################################################
 #powolanie servera
 daemon = Pyro4.Daemon()  			#tworzenie Deamona dla Pyro
-uri = daemon.register(calcul)			#binding MyClass jako obiet Pyro
+uri = daemon.register(calculator)			#binding MyClass jako obiet Pyro
 
 print("Server ruszyl.  Objekt uri= ", uri)		#wypisanie adresu uri
 daemon.requestLoop()				#tryb nasluchiwania deamona
