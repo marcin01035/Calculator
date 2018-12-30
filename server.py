@@ -1,8 +1,7 @@
 import Pyro4
 
 @Pyro4.expose
-
-class calc(object):
+class calculator():
 	def sum(self, x, y):
 		result = x+y
 		return result
@@ -18,11 +17,16 @@ class calc(object):
 	def quotient(self, x, y):
 		result = x/y
 		return result
-############################################################################
-#powolanie servera
-daemon = Pyro4.Daemon()  			#tworzenie Deamona dla Pyro
-uri = daemon.register(calc)			#binding MyClass jako obiet Pyro
 
-print("Server ruszyl.  Objekt uri= ", uri)		#wypisanie adresu uri
-daemon.requestLoop()				#tryb nasluchiwania deamona
+
+
+#server runs
+disp = calculator()
+daemon = Pyro4.Daemon(host="192.168.8.110", port=9999)
+daemon = Pyro4.Daemon.serveSimple(
+    { disp: "test.Server" },
+    ns=False,
+    daemon=daemon,
+    verbose=True
+)
 

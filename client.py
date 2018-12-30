@@ -17,13 +17,13 @@ def main():
     if z>=1 and z<5:
 
         if z==1:
-            return print("Oto wynik dzialania:",date_receiver.sum(x, y))
+            return print("Oto wynik dzialania:", date_receiver.sum(x, y))
         if z==2:
-            return print("Oto wynik dzialania:",date_receiver.difference(x, y))
+            return print("Oto wynik dzialania:", date_receiver.difference(x, y))
         if z==3:
-            return print("Oto wynik dzialania:",date_receiver.product(x, y))
+            return print("Oto wynik dzialania:", date_receiver.product(x, y))
         if z==4:
-            return print("Oto wynik dzialania:",date_receiver.quotient(x, y))
+            return print("Oto wynik dzialania:", date_receiver.quotient(x, y))
     else:
         print("Wybór jest niepoprawny! Spobuj jeszcze raz")
         return False
@@ -39,7 +39,7 @@ while True:
         print("Dziekujmy za skorzystanie z uslug naszego serwisu :)")
         break
 
-#proba GITHUB
+
 
 
 
